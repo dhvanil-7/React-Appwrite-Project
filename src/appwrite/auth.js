@@ -6,13 +6,14 @@ export class AuthService {
     client = new Client()
 
     constructor(){
-        this.client.setEndpoint(conf.appwriteUrl)
+        this.client
+        .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteProjectId);
 
         this.account = new Account(this.client)
     }
 
-    async create_account({email, password, name}){
+    async createAccount({email, password, name}){
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount) {
@@ -53,6 +54,6 @@ export class AuthService {
     }
 }
 
-const authService = new AuthService
+const authService = new AuthService()
 
 export default authService
