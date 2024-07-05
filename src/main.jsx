@@ -72,6 +72,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <div className='text-yellow-900'>OK</div>
     <Provider store={store}>
     <RouterProvider router={router}/>
     </Provider>
