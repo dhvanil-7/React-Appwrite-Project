@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { login, logout } from './store/authSlice'
 import { Header, Footer } from './components'
 import { Outlet } from 'react-router-dom'
+import './App.css'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -13,7 +14,6 @@ function App() {
   useEffect(() => {
     authService.getCurrentUser()
     .then((userData) => {
-      console.log(userData)
       if(userData){
         dispatch(login({userData}))
       }

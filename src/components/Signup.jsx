@@ -5,12 +5,13 @@ import {Button, Input, Logo} from "./index"
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 function Signup() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [register, handleSubmit] = useForm()
+    const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
 
     const create = async(data) => {

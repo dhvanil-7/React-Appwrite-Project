@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './App'
+import './index.css'
 import {Provider} from 'react-redux'
 import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { AuthLayout } from './components/index.jsx'
+import { AuthLayout } from './components'
 import {AllPosts, AddPost, EditPost, Home, Login, Post, Signup} from './pages'
 
 const router = createBrowserRouter([
@@ -72,7 +73,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='text-yellow-900'>OK</div>
     <Provider store={store}>
     <RouterProvider router={router}/>
     </Provider>
